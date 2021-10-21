@@ -1,5 +1,10 @@
 // IMPORT MODULES under test here:
-import { getPokedex, findById } from '../storage-utils.js';
+import {
+    findById,
+    getPokedex,
+    encounterPokemon,
+    capturePokemon,
+} from '../storage-utils.js';
 import defaultExport from '../pokemon.js';
 
 const pokemon = defaultExport;
@@ -47,7 +52,7 @@ test('findById should return the item from array with matching id', (expect) => 
     expect.deepEqual(actual, expected);
 });
 
-test('getResults should return the results array if it exists', (expect) => {
+test('getPokedex should return the results array if it exists', (expect) => {
     //Arrange
     const fakeResults = [
         { shown: 1, caught: 2 },
@@ -62,7 +67,7 @@ test('getResults should return the results array if it exists', (expect) => {
     expect.deepEqual(results, fakeResults);
 });
 
-test('getResults should return an empty array if no results array exists', (expect) => {
+test('getPokedex should return an empty array if no results array exists', (expect) => {
     //Arrange
     localStorage.removeItem('RESULTS');
     const fakeResults = [];
@@ -74,4 +79,43 @@ test('getResults should return an empty array if no results array exists', (expe
     expect.deepEqual(results, fakeResults);
 });
 
-// NEED TO WRITE PASSING TESTS FOR encounterPokemon and capturePokemon
+test('encounterPokemon should create a new item if not in Pokedex', (expect) => {
+    //Arrange
+    const results = [{ id: 1, timesShown: 1, timesCaught: 0 }];
+    localStorage.setItem('RESULTS', JSON.stringify(results));
+    const expected = [{ id: 1, timesShown: 2, timesCaught: 0 }];
+
+    //Act
+    encounterPokemon(1);
+    const actual = getPokedex();
+
+    //Expect
+    expect.deepEqual(actual, expected);
+});
+
+test('encounterPokemon should increment timesShown key when item exists in Pokedex', (expect) => {
+    //Arrange
+    localStorage.removeItem('RESULTS');
+    const expected = [{ id: 1, timesShown: 1, timesCaught: 0 }];
+
+    //Act
+    encounterPokemon(1);
+    const actual = getPokedex();
+
+    //Expect
+    expect.deepEqual(actual, expected);
+});
+
+test('capturePokemon should increment the timesCaught key', (expect) => {
+    //Arrange
+    const results = [{ id: 1, timesShown: 1, timesCaught: 0 }];
+    localStorage.setItem('RESULTS', JSON.stringify(results));
+    const expected = [{ id: 1, timesShown: 1, timesCaught: 1 }];
+
+    //Act
+    capturePokemon(1);
+    const actual = getPokedex();
+
+    //Expect
+    expect.deepEqual(actual, expected);
+});
