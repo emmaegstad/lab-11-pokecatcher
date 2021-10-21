@@ -52,7 +52,8 @@ buttonSubmit.addEventListener('click', () => {
 
     if (selectedPokemon) {
         capturePokemon(selectedId);
-        if (totalPlays >= 3) {
+        totalPlays++;
+        if (totalPlays >= 10) {
             window.location.replace('./results/index.html');
         } else {
             generatePokemon();
