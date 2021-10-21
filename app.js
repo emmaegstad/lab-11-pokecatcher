@@ -44,6 +44,8 @@ function generatePokemon() {
 
 buttonSubmit.addEventListener('click', () => {
     const selectedPokemon = document.querySelector('input:checked');
+    console.log(selectedPokemon);
+
     totalPlays++;
 
     if (totalPlays >= 10) {
