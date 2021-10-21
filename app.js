@@ -2,12 +2,13 @@ import defaultExport from './pokemon.js';
 import { encounterPokemon, capturePokemon } from './storage-utils.js';
 
 const pokemonArr = defaultExport;
+const pokemon1radio = document.querySelector('.pokemon-1');
 const pokemon1img = document.querySelector('.pokemon-1-img');
+const pokemon2radio = document.querySelector('.pokemon-2');
 const pokemon2img = document.querySelector('.pokemon-2-img');
+const pokemon3radio = document.querySelector('.pokemon-3');
 const pokemon3img = document.querySelector('.pokemon-3-img');
 const buttonSubmit = document.querySelector('.submit');
-
-let totalPlays = 0;
 
 function generatePokemon() {
     let randomNum1 = Math.floor(Math.random() * pokemonArr.length);
@@ -25,34 +26,38 @@ function generatePokemon() {
     }
 
     let pokemon1 = pokemonArr[randomNum1];
-    pokemon1img.src = pokemon1['url_image'];
     encounterPokemon(pokemon1.id);
+    pokemon1radio.value = pokemon1.id;
+    pokemon1img.src = pokemon1['url_image'];
 
     let pokemon2 = pokemonArr[randomNum2];
-    pokemon2img.src = pokemon2['url_image'];
     encounterPokemon(pokemon2.id);
+    pokemon2radio.value = pokemon2.id;
+    pokemon2img.src = pokemon2['url_image'];
 
     let pokemon3 = pokemonArr[randomNum3];
-    pokemon3img.src = pokemon3['url_image'];
     encounterPokemon(pokemon3.id);
+    pokemon3radio.value = pokemon3.id;
+    pokemon3img.src = pokemon3['url_image'];
 }
 
+let totalPlays = 0;
+generatePokemon();
+
 buttonSubmit.addEventListener('click', () => {
-    const selectedPokemon = document.querySelector('input:checked');
+    const selectedPokemon = document.querySelector(
+        'input[type="radio"]:checked'
+    );
+    const selectedId = Number(selectedPokemon.value);
 
-    totalPlays++;
-
-    if (totalPlays >= 10) {
-        window.location.replace('./results/index.html');
+    if (selectedPokemon) {
+        capturePokemon(selectedId);
+        if (totalPlays >= 3) {
+            window.location.replace('./results/index.html');
+        } else {
+            generatePokemon();
+        }
     } else {
-        generatePokemon();
+        alert('Select a Pokemon.');
     }
-
-    capturePokemon(selectedPokemon.id);
 });
-
-// add ids to radio buttons and grab them
-// add value to input HTML, set value with id in generatePokemon
-// set var chosenPoke with input:checked, chosedID with input:checked.value
-//run capturePoke on chosenID
-//add if (chosenRadio) statement to make sure a selection has been made

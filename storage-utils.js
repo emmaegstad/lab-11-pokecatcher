@@ -35,14 +35,7 @@ export function capturePokemon(id) {
     let results = getPokedex();
     let result = findById(id, results);
 
-    if (result) {
-        result.timesCaught++;
-    } else {
-        const newResult = { id: id, timesShown: 1, timesCaught: 0 };
-        results.push(newResult);
-    }
+    result.timesCaught++;
 
     setPokedex(results);
 }
-
-// remove else statement from capturePokemon
