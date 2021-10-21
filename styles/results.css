@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    font-family: 'Press Start 2P', cursive;
+    margin-top: 75px;
+}
+
+.results-canvas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    background-color: rgb(216, 233, 233);
+    border: 4px solid black;
+    height: 300px;
+    width: 500px;
+    padding: 15px;
+}

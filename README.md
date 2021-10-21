@@ -10,7 +10,7 @@
     - ~~wire-up selected id situation~~
 6. ~~Remove unneccessary 'else' statement from capturePokemon (storage-utils.js)~~
 7. ~~Go back and write tests for local storage functions~~
-8. Add grid to game window and place pokemon
+8. ~~Add grid to game window and place pokemon~~
 9. Add simple styles to results page
 10. Submit, and move on to pt. 2
 
