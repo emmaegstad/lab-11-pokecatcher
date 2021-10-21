@@ -44,3 +44,5 @@ export function capturePokemon(id) {
 
     setPokedex(results);
 }
+
+// remove else statement from capturePokemon

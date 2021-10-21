@@ -74,18 +74,4 @@ test('getResults should return an empty array if no results array exists', (expe
     expect.deepEqual(results, fakeResults);
 });
 
-// test('updatePokemonShown should increment timesShown in result array', (expect) => {
-//     //Arrange
-//     localStorage.removeItem('RESULTS');
-//     const fakeResults = [{ id: 1, timesShown: 1, timesCaught: 1 }];
-//     localStorage.setItem('RESULTS', JSON.stringify(fakeResults));
-
-//     //Act
-//     updatePokemonShown(1);
-//     const expected = [{ id: 1, timesShown: 2, timesCaught: 1 }];
-
-//     //Expect
-//     expect.deepEqual(fakeResults, expected);
-// });
-
-// NEED TO WRITE PASSING TESTS FOR updatePokemonShown AND updatePokemonCaught
+// NEED TO WRITE PASSING TESTS FOR encounterPokemon and capturePokemon

@@ -4,11 +4,15 @@
 
 1. ~~Add necessary file structure~~
 2. ~~Add basic HTML structure, initial styling~~
-3. TDD local storage functions
-    - Wrote functions, but still need passing tests for updatePokemonCaught and updatePokemonShown
-4. ~~TDD app.js logic~~
-5. ~~Set-up play button event listener~~
-6. Set-up 'on button click' logic
+3. ~~TDD app.js logic~~
+4. ~~Set-up play button event listener~~
+5. Set-up 'on button click' logic
+    - wire-up selected id situation
+6. Remove unneccessary 'else' statement from capturePokemon (storage-utils.js)
+7. Go back and write tests for local storage functions
+8. Add grid to game window and place pokemon
+9. Add simple styles to results page
+10. Submit, and move on to pt. 2
 
 ## File Structure
 

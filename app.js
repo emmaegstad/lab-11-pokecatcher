@@ -1,9 +1,5 @@
 import defaultExport from './pokemon.js';
-import {
-    getPokedex,
-    encounterPokemon,
-    capturePokemon,
-} from './storage-utils.js';
+import { encounterPokemon, capturePokemon } from './storage-utils.js';
 
 const pokemonArr = defaultExport;
 const pokemon1img = document.querySelector('.pokemon-1-img');
@@ -11,7 +7,6 @@ const pokemon2img = document.querySelector('.pokemon-2-img');
 const pokemon3img = document.querySelector('.pokemon-3-img');
 const buttonSubmit = document.querySelector('.submit');
 
-let pokedex = getPokedex();
 let totalPlays = 0;
 
 function generatePokemon() {
@@ -44,7 +39,6 @@ function generatePokemon() {
 
 buttonSubmit.addEventListener('click', () => {
     const selectedPokemon = document.querySelector('input:checked');
-    console.log(selectedPokemon);
 
     totalPlays++;
 
@@ -57,4 +51,8 @@ buttonSubmit.addEventListener('click', () => {
     capturePokemon(selectedPokemon.id);
 });
 
-console.log(pokedex);
+// add ids to radio buttons and grab them
+// add value to input HTML, set value with id in generatePokemon
+// set var chosenPoke with input:checked, chosedID with input:checked.value
+//run capturePoke on chosenID
+//add if (chosenRadio) statement to make sure a selection has been made
