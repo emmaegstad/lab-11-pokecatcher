@@ -1,25 +1,61 @@
-# Alchemy Bootstrap Template
+# Pokecatcher Plan
 
-## Making a plan
+### Steps
 
-(bolded steps are mandatory, unbolded are for more advanced projects)
+1. ~~Add necessary file structure~~
+2. ~~Add basic HTML structure, initial styling~~
+3. ~~TDD app.js logic~~
+4. ~~Set-up play button event listener~~
+5. ~~Set-up 'on button click' logic~~
+    - ~~wire-up selected id situation~~
+6. ~~Remove unneccessary 'else' statement from capturePokemon (storage-utils.js)~~
+7. ~~Go back and write tests for local storage functions~~
+8. ~~Add grid to game window and place pokemon~~
+9. ~~Add simple styles to results page~~
+10. Submit, and move on to pt. 2
 
-1) **Make a drawing of your app. Simple "wireframes"**
-2) **Once you have a drawing, name the HTML elements you'll need to realize your vision**
-3) **For each HTML element ask: Why do I need this?**
-4) Ask which of out HTML elements are hard coded, and which are dynamically generated?
-5) **Once we know _why_ we need each element, think about how to implement the "Why" as a "How"**
-6) Is there some state we need to initialize?
-7) **Find all the 'events' (user clicks, form submit, on load etc) in your app. Ask one by one, "What happens when" for each of these events. Does any state change?**
-8) **Think about how to validate each of your steps**
-9) Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be resused?)
-10) Consider your data model. What objects will you be using? What are the key/value pairs? What arrays do you need? What needs to live in local storage?
-11) **Consider what features _depend_ on what other features. Use this dependency logic to figure out what order to complete tasks.**
+## File Structure
 
+-   home page (root)
+    -   index.html
+    -   app.js
+-   results page (/results)
+    -   index.html
+    -   results.js
+-   storage-utils.js (root)
+-   pokemon.js (root)
 
-## To Run Cypress Tests
-* `npm install`
-* `npm test`
-* Cypress will open -- you should then click "run <#> integration spec(s)"
-    ![](cypress.png)
-* Make sure all tests pass
+## HTML Elements
+
+-   build home page with
+    -   three pokemon images
+    -   submit button
+-   build empty results page
+
+## Local Storage Functions
+
+-   findById -- should locate pokemon from pokemon array by id
+-   getResults -- return the results array or empty array
+-   showPokemon -- increment the shown key for a pokemon
+-   catchPokemon -- increment the caught key for a pokemon
+
+## app.js Logic
+
+-   make function called generatePokemon()
+    -   generate 3 random pokemon
+    -   call showPokemon for each
+    -   render the Pokemon on the page
+
+### ON PAGE LOAD
+
+-   set totalPlays to 0
+-   call generatePokemon()
+
+### ON BUTTON CLICK
+
+-   increment totalPlays
+-   call catchPokemon with chosen pokemon
+-   if totalPlays >= 10
+    -   redirect to results
+-   else
+    -   call generate Pokemon
