@@ -2,8 +2,8 @@
 
 ### Pt. 2 Steps
 
-1. Create function that generates an result element for each pokemon
-2. Append elements to result display
+1. ~~Create function that generates an result element for each pokemon~~
+2. ~~Append elements to result display~~
 3. Profit???
 4. Make my chart
 
