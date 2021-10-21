@@ -7,7 +7,6 @@ const pokemonArr = defaultExport;
 
 for (let item of results) {
     const pokemon = findById(item.id, pokemonArr);
-    console.log(pokemon['pokemon']);
 
     const container = document.createElement('div');
     container.classList.add('container');
@@ -28,15 +27,24 @@ for (let item of results) {
     resultsCanvas.append(container);
 }
 
+const names = results.map((item) => {
+    const pokemon = findById(item.id, pokemonArr);
+    return pokemon['pokemon'];
+});
+
+const captured = results.map((item) => {
+    return item.timesCaught;
+});
+
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: names,
         datasets: [
             {
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
+                label: '# of Times Captured',
+                data: captured,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
