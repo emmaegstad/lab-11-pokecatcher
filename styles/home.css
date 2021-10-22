@@ -16,6 +16,7 @@ body {
     word-spacing: 5px;
     color: white;
     text-transform: uppercase;
+    margin: 0;
 }
 
 header {
@@ -23,16 +24,16 @@ header {
     flex-direction: column;
     align-items: center;
     font-family: 'Press Start 2P', cursive;
-    margin-top: 25px;
-    margin-bottom: 40px;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
 }
 
 .home-title {
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .pokeball {
-    height: 60px;
+    height: 50px;
     filter: none;
 }
 
@@ -105,6 +106,7 @@ button {
     background-color: black;
     color: white;
     padding: 12px;
+    margin-bottom: 50px;
 }
 
 button:active {
