@@ -9,8 +9,6 @@
 5. Style chart (read docs)
 6. Stretch goals?
 
-\*\*\* TDD setPokedex
-
 ### Pt. 1 Steps
 
 1. ~~Add necessary file structure~~
