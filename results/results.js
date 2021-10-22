@@ -1,6 +1,7 @@
 import defaultExport from '../pokemon.js';
 import { getPokedex, findById } from '../storage-utils.js';
 
+const playButton = document.querySelector('.reset');
 const resultsCanvas = document.querySelector('.results-canvas');
 const results = getPokedex();
 const pokemonArr = defaultExport;
@@ -26,6 +27,11 @@ for (let item of results) {
     container.append(name, img, encountered, captured);
     resultsCanvas.append(container);
 }
+
+playButton.addEventListener('click', () => {
+    localStorage.removeItem('RESULTS');
+    window.location.replace('../index.html');
+});
 
 const names = results.map((item) => {
     const pokemon = findById(item.id, pokemonArr);
