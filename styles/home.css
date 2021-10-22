@@ -1,5 +1,21 @@
 body {
-    background: linear-gradient(45deg, #4172c2, #56d358) fixed;
+    /* background: linear-gradient(45deg, #4172c2, #56d358) fixed; */
+    background: linear-gradient(45deg, #55c9ec, #f7f9fa) fixed;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+    height: 2.5vh;
+    width: 100%;
+    background-color: black;
+    font-size: 8px;
+    letter-spacing: 3px;
+    word-spacing: 5px;
+    color: white;
+    text-transform: uppercase;
 }
 
 header {
@@ -7,8 +23,8 @@ header {
     flex-direction: column;
     align-items: center;
     font-family: 'Press Start 2P', cursive;
-    margin-top: 75px;
-    margin-bottom: 75px;
+    margin-top: 25px;
+    margin-bottom: 40px;
 }
 
 .home-title {
@@ -16,7 +32,7 @@ header {
 }
 
 .pokeball {
-    height: 50px;
+    height: 60px;
     filter: none;
 }
 
@@ -38,11 +54,12 @@ main {
     height: 400px;
     width: 750px;
     padding: 50px;
+    margin-bottom: 25px;
 }
 
 img {
     height: 200px;
-    filter: drop-shadow(10px 10px 15px rgb(17, 38, 30)) invert(0);
+    filter: drop-shadow(10px 10px 15px rgb(14, 97, 42)) invert(0);
 }
 
 .p1 {
@@ -87,5 +104,9 @@ button {
     font-family: 'Press Start 2P', cursive;
     background-color: black;
     color: white;
-    padding: 8px;
+    padding: 12px;
+}
+
+button:active {
+    box-shadow: 1px 1px #000000;
 }
