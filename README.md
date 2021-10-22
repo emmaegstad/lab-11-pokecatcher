@@ -1,6 +1,17 @@
 # Pokecatcher Plan
 
-### Steps
+### Pt. 2 Steps
+
+1. ~~Create function that generates an result element for each pokemon~~
+2. ~~Append elements to result display~~
+3. Profit???
+4. ~~Add chart to page~~
+5. Style chart (read docs)
+6. Stretch goals?
+
+\*\*\* TDD setPokedex
+
+### Pt. 1 Steps
 
 1. ~~Add necessary file structure~~
 2. ~~Add basic HTML structure, initial styling~~
@@ -12,7 +23,7 @@
 7. ~~Go back and write tests for local storage functions~~
 8. ~~Add grid to game window and place pokemon~~
 9. ~~Add simple styles to results page~~
-10. Submit, and move on to pt. 2
+10. ~~Submit, and move on to pt. 2~~
 
 ## File Structure
 
@@ -27,35 +38,46 @@
 
 ## HTML Elements
 
+### Home
+
 -   build home page with
     -   three pokemon images
     -   submit button
--   build empty results page
 
-## Local Storage Functions
+### Results
+
+-   title
+-   results table
+-   results chart
+-   play again button?
+
+## Pt. 1 Logic
+
+### Local Storage Functions
 
 -   findById -- should locate pokemon from pokemon array by id
 -   getResults -- return the results array or empty array
 -   showPokemon -- increment the shown key for a pokemon
 -   catchPokemon -- increment the caught key for a pokemon
 
-## app.js Logic
+### app.js Logic
 
 -   make function called generatePokemon()
     -   generate 3 random pokemon
     -   call showPokemon for each
     -   render the Pokemon on the page
 
-### ON PAGE LOAD
+## Pt. 2 Logic
 
--   set totalPlays to 0
--   call generatePokemon()
+### Results
 
-### ON BUTTON CLICK
+-   loop through pokemon and create an element for each that contains the:
+    -   name
+    -   img
+    -   times encountered
+    -   times captured
+-   display elements in results display
 
--   increment totalPlays
--   call catchPokemon with chosen pokemon
--   if totalPlays >= 10
-    -   redirect to results
--   else
-    -   call generate Pokemon
+### Chart
+
+-   ???
