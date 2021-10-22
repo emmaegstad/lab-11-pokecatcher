@@ -87,9 +87,9 @@ test('setPokedex should add array to local storage', (expect) => {
         { shown: 1, caught: 2 },
         { shown: 2, caught: 4 },
     ];
-    localStorage.setItem('RESULTS', JSON.stringify(fakeResults));
 
     //Act
+    setPokedex(fakeResults);
     const results = getPokedex();
 
     //Expect
