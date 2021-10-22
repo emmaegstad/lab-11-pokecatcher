@@ -5,7 +5,11 @@
 1. ~~Create function that generates an result element for each pokemon~~
 2. ~~Append elements to result display~~
 3. Profit???
-4. Make my chart
+4. ~~Add chart to page~~
+5. Style chart (read docs)
+6. Stretch goals?
+
+\*\*\* TDD setPokedex
 
 ### Pt. 1 Steps
 

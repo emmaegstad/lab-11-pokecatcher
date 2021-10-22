@@ -36,7 +36,7 @@ const captured = results.map((item) => {
     return item.timesCaught;
 });
 
-var ctx = document.getElementById('myChart').getContext('2d');
+var ctx = document.getElementById('resultsChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {

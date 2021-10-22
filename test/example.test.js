@@ -2,6 +2,7 @@
 import {
     findById,
     getPokedex,
+    setPokedex,
     encounterPokemon,
     capturePokemon,
 } from '../storage-utils.js';
@@ -71,6 +72,22 @@ test('getPokedex should return an empty array if no results array exists', (expe
     //Arrange
     localStorage.removeItem('RESULTS');
     const fakeResults = [];
+
+    //Act
+    const results = getPokedex();
+
+    //Expect
+    expect.deepEqual(results, fakeResults);
+});
+
+test('setPokedex should add array to local storage', (expect) => {
+    //Arrange
+    localStorage.removeItem('RESULTS');
+    const fakeResults = [
+        { shown: 1, caught: 2 },
+        { shown: 2, caught: 4 },
+    ];
+    localStorage.setItem('RESULTS', JSON.stringify(fakeResults));
 
     //Act
     const results = getPokedex();
